@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Guest Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hotel Guest Registration Form</h1>
+        <form id="registrationForm" action="process.php" method="POST" enctype="multipart/form-data">
+
+            <!-- Language Selection -->
+            <fieldset>
+                <legend>Language Selection</legend>
+                <div class="form-group">
+                    <label for="language">Preferred Language:</label>
+                    <select id="language" name="language" required>
+                        <option value="">Select Language</option>
+                        <option value="english">English</option>
+                        <option value="hindi">Hindi</option>
+                        <option value="spanish">Spanish</option>
+                        <option value="french">French</option>
+                        <option value="german">German</option>
+                        <option value="italian">Italian</option>
+                        <option value="chinese">Chinese</option>
+                        <option value="japanese">Japanese</option>
+                        <option value="arabic">Arabic</option>
+                        <option value="portuguese">Portuguese</option>
+                        <option value="kannada">Kannada</option>
+                        <option value="telugu">Telugu</option>
+                        <option value="tamil">Tamil</option>
+                        <option value="bengali">Bengali</option>
+                        <option value="marathi">Marathi</option>
+                        <option value="gujarati">Gujarati</option>
+                        <option value="punjabi">Punjabi</option>
+                        <option value="malayalam">Malayalam</option>
+                        <option value="odia">Odia</option>
+                        <option value="assamese">Assamese</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <!-- Personal Information -->
+            <fieldset>
+                <legend>Personal Information</legend>
+                <div class="form-group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="nationality">Nationality:</label>
+                    <select id="nationality" name="nationality" required>
+                        <option value="">Select Nationality</option>
+                        <option value="india">India</option>
+                        <option value="usa">USA</option>
+                        <option value="uk">UK</option>
+                        <option value="australia">Australia</option>
+                        <option value="japan">Japan</option>
+                        <option value="china">China</option>
+                        <option value="germany">Germany</option>
+                        <option value="france">France</option>
+                        <option value="italy">Italy</option>
+                        <option value="brazil">Brazil</option>
+                        <option value="canada">Canada</option>
+                        <option value="russia">Russia</option>
+                        <option value="south-korea">South Korea</option>
+                        <option value="mexico">Mexico</option>
+                        <option value="spain">Spain</option>
+                        <option value="netherlands">Netherlands</option>
+                        <option value="sweden">Sweden</option>
+                        <option value="switzerland">Switzerland</option>
+                        <option value="singapore">Singapore</option>
+                        <option value="uae">UAE</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <select id="countryCodePhone" name="countryCodePhone" required>
+                        <option value="+91">+91 (India)</option>
+                        <option value="+1">+1 (USA)</option>
+                        <option value="+44">+44 (UK)</option>
+                        <option value="+61">+61 (Australia)</option>
+                        <option value="+81">+81 (Japan)</option>
+                        <option value="+86">+86 (China)</option>
+                        <option value="+49">+49 (Germany)</option>
+                        <option value="+33">+33 (France)</option>
+                        <option value="+39">+39 (Italy)</option>
+                        <option value="+55">+55 (Brazil)</option>
+                    </select>
+                    <input type="tel" id="phone" name="phone" pattern="\d{10}" placeholder="10-digit number" maxlength="10" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+                </div>
+            </fieldset>
+
+            <!-- Emergency Contact -->
+            <fieldset>
+                <legend>Emergency Contact</legend>
+                <div class="form-group">
+                    <label for="emergencyName">Emergency Contact Name:</label>
+                    <input type="text" id="emergencyName" name="emergencyName" required>
+                </div>
+                <div class="form-group">
+                    <label for="relationship">Relationship:</label>
+                    <input type="text" id="relationship" name="relationship" required>
+                </div>
+                <div class="form-group">
+                    <label for="emergencyContact">Emergency Contact Number:</label>
+                    <select id="countryCodeEmergency" name="countryCodeEmergency" required>
+                        <option value="+91">+91 (India)</option>
+                        <option value="+1">+1 (USA)</option>
+                        <option value="+44">+44 (UK)</option>
+                        <option value="+61">+61 (Australia)</option>
+                        <option value="+81">+81 (Japan)</option>
+                        <option value="+86">+86 (China)</option>
+                        <option value="+49">+49 (Germany)</option>
+                        <option value="+33">+33 (France)</option>
+                        <option value="+39">+39 (Italy)</option>
+                        <option value="+55">+55 (Brazil)</option>
+                    </select>
+                    <input type="tel" id="emergencyContact" name="emergencyContact" pattern="\d{10}" placeholder="10-digit number" maxlength="10" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+                </div>
+            </fieldset>
+
+            <!-- Reservation and Stay Details -->
+            <fieldset>
+                <legend>Reservation and Stay Details</legend>
+                <div class="form-group">
+                    <label for="checkIn">Check-in Date:</label>
+                    <input type="date" id="checkIn" name="checkIn" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkOut">Check-out Date:</label>
+                    <input type="date" id="checkOut" name="checkOut" required>
+                </div>
+                <div class="form-group">
+                    <label for="roomType">Room Type:</label>
+                    <select id="roomType" name="roomType" required>
+                        <option value="">Select Room Type</option>
+                        <option value="single">Single</option>
+                        <option value="double">Double</option>
+                        <option value="suite">Suite</option>
+                        <option value="deluxe">Deluxe</option>
+                        <option value="family">Family</option>
+                        <option value="executive">Executive</option>
+                        <option value="presidential">Presidential</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Number of Guests:</label>
+                    <select id="guests" name="guests" required>
+                        <option value="">Select Number</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </div>
+
+                <!-- 🌡️ Range Input for Preferred Room Temperature -->
+                <div class="form-group">
+                    <label for="temperature">Preferred Room Temperature: <span id="tempValue">24</span>°C</label>
+                    <input type="range" id="temperature" name="temperature" min="16" max="30" value="24" step="1" oninput="document.getElementById('tempValue').innerText = this.value;">
+                </div>
+            </fieldset>
+
+            <!-- Identification Proof -->
+            <fieldset>
+                <legend>Identification Proof</legend>
+                <div class="form-group">
+                    <label for="billingContact">Contact Number:</label>
+                    <select id="countryCodeBilling" name="countryCodeBilling" required>
+                        <option value="+91">+91 (India)</option>
+                        <option value="+1">+1 (USA)</option>
+                        <option value="+44">+44 (UK)</option>
+                        <option value="+61">+61 (Australia)</option>
+                    </select>
+                    <input type="tel" id="billingContact" name="billingContact" pattern="\d{10}" placeholder="10-digit number" maxlength="10" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="aadhaar">Aadhaar Card:</label>
+                    <input type="file" id="aadhaar" name="aadhaar" accept=".jpg,.jpeg,.png,.pdf" required>
+                </div>
+
+                <!-- 🖼️ Upload Photo with Preview -->
+                <div class="form-group">
+                    <label for="photo">Upload Your Photo:</label>
+                    <input type="file" id="photo" name="photo" accept="image/*" required>
+                    <br>
+                    <img id="photoPreview" src="#" alt="Image Preview" style="display:none; margin-top:10px; max-width:150px; border:1px solid #ccc; border-radius:5px;">
+                </div>
+            </fieldset>
+
+            <!-- Terms and Conditions -->
+            <fieldset>
+                <legend>Terms and Conditions</legend>
+                <div class="form-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the <a href="#" target="_blank">Terms and Conditions</a></label>
+                </div>
+            </fieldset>
+
+            <button type="submit">Submit Registration</button>
+        </form>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Image Preview Script -->
+    <script>
+        document.getElementById('photo').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            const preview = document.getElementById('photoPreview');
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = '#';
+                preview.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+s{
+    "name": "hotel-registration-app",
+    "description": "Hotel Guest Registration Form",
+    "type": "project",
+    "require": {
+        "php": ">=7.4"
+    }
+}
